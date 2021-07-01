@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“MySQL基本操作” on Humanwin&#39;s Blog</title>
+    <link>http://localhost:1313/categories/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+    <description>Recent content in “MySQL基本操作” on Humanwin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 29 Jun 2021 23:41:56 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL基本操作</title>
+      <link>http://localhost:1313/post/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 29 Jun 2021 23:41:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <description>MySQL基本操作命令 安装 下载mysql-8.0.25-winx64.zip并解压 进入mysql-8.0.25-winx64\bin目录下，</description>
+    </item>
+    
+  </channel>
+</rss>
