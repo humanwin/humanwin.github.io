@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>DBA笔试总结 - Humanwin&#39;s Blog</title>
+  
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Humanwin" /><meta name="description" content="记录做过的DBA笔试题 1.数据模型的要素是什么？ 答：数据结构、数据操作、完整性约束。 补充: 数据结构：描述了两类内容，一是数据库对象的类型、内" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.84.1 with theme even" />
+
+
+<link rel="canonical" href="https://humanwin.github.io/post/dba%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="DBA笔试总结" />
+<meta property="og:description" content="记录做过的DBA笔试题 1.数据模型的要素是什么？ 答：数据结构、数据操作、完整性约束。 补充: 数据结构：描述了两类内容，一是数据库对象的类型、内" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://humanwin.github.io/post/dba%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-07-03T11:08:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-07-03T11:08:00&#43;08:00" />
+
+<meta itemprop="name" content="DBA笔试总结">
+<meta itemprop="description" content="记录做过的DBA笔试题 1.数据模型的要素是什么？ 答：数据结构、数据操作、完整性约束。 补充: 数据结构：描述了两类内容，一是数据库对象的类型、内"><meta itemprop="datePublished" content="2021-07-03T11:08:00&#43;08:00" />
+<meta itemprop="dateModified" content="2021-07-03T11:08:00&#43;08:00" />
+<meta itemprop="wordCount" content="2281">
+<meta itemprop="keywords" content="“DBA笔试”," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DBA笔试总结"/>
+<meta name="twitter:description" content="记录做过的DBA笔试题 1.数据模型的要素是什么？ 答：数据结构、数据操作、完整性约束。 补充: 数据结构：描述了两类内容，一是数据库对象的类型、内"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Humanwin&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Humanwin&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">DBA笔试总结</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-07-03 </span>
+        <div class="post-category">
+            <a href="/categories/dba%E7%AC%94%E8%AF%95/"> “DBA笔试” </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1数据模型的要素是什么">1.数据模型的要素是什么？</a></li>
+    <li><a href="#答数据结构数据操作完整性约束">答：数据结构、数据操作、完整性约束。</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#2oracle日志模式有">2.oracle日志模式有？</a></li>
+    <li><a href="#答logging-force-logging-nologging">答：LOGGING 、FORCE LOGGING 、NOLOGGING。</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3oracle将查询结果放入临时表的写法是">3.oracle将查询结果放入临时表的写法是？</a></li>
+    <li><a href="#答">答：</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4postgresql清理磁盘空间的方式">4.PostgreSQL清理磁盘空间的方式？</a></li>
+    <li><a href="#答vacuumdb对一个postgresql数据库进行垃圾收集和分析">答：vacuumdb(对一个PostgreSQL数据库进行垃圾收集和分析)</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#5如何进行mysql一致性热备">5.如何进行MySQL一致性热备</a></li>
+    <li><a href="#答-1">答：</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#6什么是oracle监听机制监听挂掉后对连接有什么影响">6.什么是oracle监听机制？监听挂掉后对连接有什么影响？</a></li>
+    <li><a href="#答-2">答：</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#7什么是oracle绑定变量机制">7.什么是oracle绑定变量机制？</a></li>
+    <li><a href="#答-3">答：</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#8">8.</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>记录做过的DBA笔试题</p>
+</blockquote>
+<h1 id="1数据模型的要素是什么">1.数据模型的要素是什么？</h1>
+<h1 id="答数据结构数据操作完整性约束">答：数据结构、数据操作、完整性约束。</h1>
+<h5 id="补充">补充:</h5>
+<h5 id="数据结构描述了两类内容一是数据库对象的类型内容等比如关系模型有关系属性域属性的取值范围等对象二是数据之间联系有关的对象总之数据结构是对象类型的集合表视图都是对象他们是不同的类型">数据结构：描述了两类内容，一是数据库对象的类型、内容等比如，关系模型有关系，属性，域（属性的取值范围）等对象。二是数据之间联系有关的对象。总之，数据结构是对象类型的集合。（表、视图都是对象，他们是不同的类型）</h5>
+<h5 id="数据操作在对象的实例上允许进行的操作的集合比如在表上允许进行查询删除等操作">数据操作：在对象的实例上允许进行的操作的集合。比如，在表上允许进行查询、删除等操作。</h5>
+<h5 id="完整性约束一组规则这组规则对数据及其关系起到制约的作用数据模型应该规定这样的一组规则以保证数据的正确有效相容并提供定义规则的机制">完整性约束：一组规则，这组规则对数据及其关系起到制约的作用。数据模型应该规定这样的一组规则，以保证数据的正确、有效、相容，并提供定义规则的机制。</h5>
+<hr>
+<h1 id="2oracle日志模式有">2.oracle日志模式有？</h1>
+<h1 id="答logging-force-logging-nologging">答：LOGGING 、FORCE LOGGING 、NOLOGGING。</h1>
+<h5 id="补充-1">补充：</h5>
+<h5 id="logging当创建一个数据库对象时将记录日志信息到联机重做日志文件logging实际上是对象的一个属性用来表示在创建对象时是否记录redo日志包括在做dml时是否记录redo日志默认是logging无论数据库是否处于归档模式这并不改变表空间与对象级别上的缺省的日志记录模式对于临时表空间将不记录日志到联机重做日志文件">LOGGING：当创建一个数据库对象时将记录日志信息到联机重做日志文件。LOGGING实际上是对象的一个属性，用来表示在创建对象时是否记录REDO日志，包括在做DML时是否记录REDO日志。默认是LOGGING，无论数据库是否处于归档模式，这并不改变表空间与对象级别上的缺省的日志记录模式。对于临时表空间将不记录日志到联机重做日志文件。</h5>
+<h5 id="force-logging简言之强制记录日志即对数据库中的所有操作都产生日志信息并将该信息写入到联机重做日志文件">FORCE LOGGING：简言之，强制记录日志，即对数据库中的所有操作都产生日志信息，并将该信息写入到联机重做日志文件。</h5>
+<h5 id="nologging正好与loggingforce-logging-相反尽可能的记录最少日志信息到联机日志文件">NOLOGGING：正好与LOGGING、FORCE LOGGING 相反，尽可能的记录最少日志信息到联机日志文件。</h5>
+<h5 id="force-logging可以在数据库级别表空间级别进行设定而logging与nologging可以在数据对象级别设定">FORCE LOGGING可以在数据库级别、表空间级别进行设定、而LOGGING与NOLOGGING可以在数据对象级别设定.</h5>
+<hr>
+<h1 id="3oracle将查询结果放入临时表的写法是">3.oracle将查询结果放入临时表的写法是？</h1>
+<h1 id="答">答：</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">CREATE GLOBAL TEMPORARY TABLE 临时表名
+ON COMMIT PRESERVE ROWS 
+AS
+SELECT *
+FROM 被查表名
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="补充-2">补充：</h5>
+<h5 id="preserve-rows表示在会话结束链接断开后清除临时表的数据">preserve rows表示在会话结束(链接断开)后清除临时表的数据.</h5>
+<h5 id="delete-rows用于事务相关也就在事务结束后truncate-data-in-the-temporary-table">delete rows用于事务相关,也就在事务结束后truncate data in the temporary table.</h5>
+<hr>
+<h1 id="4postgresql清理磁盘空间的方式">4.PostgreSQL清理磁盘空间的方式？</h1>
+<h1 id="答vacuumdb对一个postgresql数据库进行垃圾收集和分析">答：vacuumdb(对一个PostgreSQL数据库进行垃圾收集和分析)</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">vacuumdb [connection-option...] [option...] [ --table | -t table [( column [,...] )] ] ... [dbname]
+vacuumdb [connection-option...] [option...] --all | -a
+---
+-?/--help 显示有关vacuumdb命令行参数的帮助并退出。
+-a/--all 清理所有数据库。
+[--dbname=/-a] dbname 指定要清理或分析的数据库的名称。
+-f/--full 执行“完全”清理。
+-z/--analyze 也计算优化器使用的统计信息。
+-Z/--analyze-only 只计算优化器使用的统计信息（不清理）。
+--table=/-t table  [ (column [,...]) ] 只清理或分析table。列名只能和--analyze或--analyze-only选项一起被指定。通过写多个-t开关可以清理多个表。
+-v/--verbose 在处理期间打印详细信息。
+---
+举例
+1. 要清理数据库test：
+vacuumdb test
+2. 要清理和为优化器分析一个名为bigdb的数据库：
+vacuumdb --analyze bigdb
+3. 要清理在名为xyzzy的数据库中的一个表foo，并且为优化器分析该表的bar列：
+vacuumdb --analyze --verbose --table &#39;foo(bar)&#39; xyzzy
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="补充参考httppostgrescndocs13app-vacuumdbhtml">补充：<a href="http://postgres.cn/docs/13/app-vacuumdb.html">参考</a></h5>
+<hr>
+<h1 id="5如何进行mysql一致性热备">5.如何进行MySQL一致性热备</h1>
+<h1 id="答-1">答：</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysqldump -uroot -p --skip-opt --default-character-set=utf8  --single-transaction --master-data=2 --no-autocommit -B dbname&gt; backup.sql
+参数解释：
+--single-transaction：执行一致性备份。
+--master-data=2：要求dump结果中以注释形式保存备份时的binlog位置信息。
+-B：指定要dump的数据库，在这里dbname是一个使用InnoDB作为存储引擎的库，其中只有一个表t1。
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="补充参考httpswwwcnblogscom0591jbp13655290html">补充:<a href="https://www.cnblogs.com/0591jb/p/13655290.html">参考</a></h5>
+<hr>
+<h1 id="6什么是oracle监听机制监听挂掉后对连接有什么影响">6.什么是oracle监听机制？监听挂掉后对连接有什么影响？</h1>
+<h1 id="答-2">答：</h1>
+<h5 id="a什么是监听监听器是oracle基于服务器端的一种网络服务主要用于监听客户端向数据库服务器端提出的连接请求既然是基于服务器端的服务那么它也只存在于数据库服务器端进行监听器的设置也是在数据库服务器端完成的oracle网络配置有三个配置文件-listenerora主要负责服务器端的监听配置tnsnamesora主要负责客户端的监听配置sqlnetora是驻留在客户端机器和数据库服务器上其目录均在oracle_homenetworkadmin-oracle客户端与服务器端的连接是通过客户端发出连接请求由服务器端监听器对客户端连接请求进行合法检查如果连接请求有效则进行连接否则拒绝该连接">a.什么是监听：监听器是Oracle基于服务器端的一种网络服务，主要用于监听客户端向数据库服务器端提出的连接请求。既然是基于服务器端的服务，那么它也只存在于数据库服务器端，进行监听器的设置也是在数据库服务器端完成的。oracle网络配置有三个配置文件 listener.ora(主要负责服务器端的监听配置)，tnsnames.ora(主要负责客户端的监听配置)，sqlnet.ora(是驻留在客户端机器和数据库服务器上)，其目录均在$ORACLE_HOME/network/admin 。Oracle客户端与服务器端的连接是通过客户端发出连接请求，由服务器端监听器对客户端连接请求进行合法检查，如果连接请求有效，则进行连接，否则拒绝该连接。</h5>
+<h5 id="b常用命令">b.常用命令:</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">lsnrctl start/stop   开启监听/关闭监听
+lsnrctl status   查看监听状态 (ready：动态，unknown：静态，)
+lsnrctl reload  重新装入监听器，重新读取listener.ora文件，但不关闭监听器。如果该文件发生了变化，重新刷新监听器。
+lsnrctl version 显示oracle net软件与协议适配器的版本。
+lsnrctl services 列举监听器的服务信息，列出服务的一个汇总表及为每个协议服务处理程序所建立和拒绝的连接信息个数。
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="补充参考httpswwwcnblogscomqingorap8572839html">补充：<a href="https://www.cnblogs.com/qingora/p/8572839.html">参考</a></h5>
+<hr>
+<h1 id="7什么是oracle绑定变量机制">7.什么是oracle绑定变量机制？</h1>
+<h1 id="答-3">答：</h1>
+<h5 id="绑定变量是指在sql语句的条件中使用变量而不是常量执行大量句式相同的sql时可以节省下很多硬解析解析制定执行路径优化访问计划等许多的步骤的耗时">绑定变量是指在sql语句的条件中使用变量而不是常量。执行大量句式相同的SQL时，可以节省下很多硬解析(解析,制定执行路径,优化访问计划等许多的步骤)的耗时。</h5>
+<h5 id="补充-3">补充：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">普通SQL:
+SELECT fname, lname, pcode FROM cust WHERE id = 674;
+SELECT fname, lname, pcode FROM cust WHERE id = 234;
+SELECT fname, lname, pcode FROM cust WHERE id = 332;
+绑定变量:
+SELECT fname, lname, pcode FROM cust WHERE id = :cust_no;
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="当一个sql语句提交后oracle-在接收到这些sql后会先对这个sql做一个hash-函数运算得到一个hash值然后到共享池中寻找是否有和这个hash-值匹配的sql存在-如果找到了oracle将直接使用已经存在的sql-的执行计划去执行当前的sql然后将结果返回给用户-如果在共享池中没有找到相同hash-值的sqloracle-会认为这是一条新的sql-会进行硬解析而唯一使得oracle-能够重复利用执行计划的方法就是采用绑定变量绑定变量的本质就是本来需要做oracle-硬解析的sql-变成软解析以减少oracle-花费在sql解析上的时间和资源">当一个SQL语句提交后，Oracle 在接收到这些SQL后，会先对这个SQL做一个hash 函数运算，得到一个Hash值，然后到共享池中寻找是否有和这个hash 值匹配的SQL存在。 如果找到了，Oracle将直接使用已经存在的SQL 的执行计划去执行当前的SQL，然后将结果返回给用户。 如果在共享池中没有找到相同Hash 值的SQL，oracle 会认为这是一条新的SQL, 会进行硬解析。而唯一使得oracle 能够重复利用执行计划的方法就是采用绑定变量。绑定变量的本质就是本来需要做Oracle 硬解析的SQL 变成软解析，以减少ORACLE 花费在SQL解析上的时间和资源。</h5>
+<hr>
+<h1 id="8">8.</h1>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-07-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/dba%E7%AC%94%E8%AF%95/">“DBA笔试”</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">《被讨厌的勇气》--笔记</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+            <span class="next-text nav-default">MySQL基本操作</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
