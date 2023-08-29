@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Humanwin Site</title>
+    <link>https://humanwin.site/categories/</link>
+    <description>Recent content in Categories on Humanwin Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Nov 2022 15:00:30 +0000</lastBuildDate><atom:link href="https://humanwin.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>炒股</title>
+      <link>https://humanwin.site/categories/%E7%82%92%E8%82%A1/</link>
+      <pubDate>Sun, 13 Nov 2022 15:00:30 +0000</pubDate>
+      
+      <guid>https://humanwin.site/categories/%E7%82%92%E8%82%A1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
