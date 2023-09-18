@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>计算机 on Humanwin Site</title>
+    <link>https://humanwin.site/en/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+    <description>Recent content in 计算机 on Humanwin Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Nov 2022 16:45:21 +0000</lastBuildDate><atom:link href="https://humanwin.site/en/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人github博客部署过程</title>
+      <link>https://humanwin.site/en/posts/hexo&#43;git%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Sun, 27 Nov 2022 16:45:21 +0000</pubDate>
+      
+      <guid>https://humanwin.site/en/posts/hexo&#43;git%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</guid>
+      <description>配置github密钥 git config &amp;ndash;global user.name &amp;ldquo;你的GitHub用户名&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;你的GitHub注册邮箱&amp;rdquo; ssh-keygen</description>
+    </item>
+    
+  </channel>
+</rss>

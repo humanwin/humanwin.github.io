@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Humanwin Site</title>
+    <link>https://humanwin.site/en/categories/</link>
+    <description>Recent content in Categories on Humanwin Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Jan 2023 23:11:58 +0000</lastBuildDate><atom:link href="https://humanwin.site/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>复盘哥</title>
+      <link>https://humanwin.site/en/categories/%E5%A4%8D%E7%9B%98%E5%93%A5/</link>
+      <pubDate>Tue, 10 Jan 2023 23:11:58 +0000</pubDate>
+      
+      <guid>https://humanwin.site/en/categories/%E5%A4%8D%E7%9B%98%E5%93%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>炒股</title>
+      <link>https://humanwin.site/en/categories/%E7%82%92%E8%82%A1/</link>
+      <pubDate>Sat, 07 Jan 2023 15:01:15 +0000</pubDate>
+      
+      <guid>https://humanwin.site/en/categories/%E7%82%92%E8%82%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机</title>
+      <link>https://humanwin.site/en/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+      <pubDate>Sun, 27 Nov 2022 16:45:21 +0000</pubDate>
+      
+      <guid>https://humanwin.site/en/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
